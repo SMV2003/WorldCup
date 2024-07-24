@@ -8,8 +8,7 @@
 #fi
 
 # Do not change code above this line. Use the PSQL variable above to query your database.
-#PGPASSWORD=smvpg psql -U postgres worldcup -h 5433
-#PSQL="psql postgresql://postgres:smvpg@localhost:5433/worldcup"
+#PSQL="psql postgresql://postgres:@localhost:5433/worldcup"
 PSQL="psql --username=postgres --dbname=worldcup --port=5433 --password -t --no-align -c"
 echo "$($PSQL"TRUNCATE teams,games")"
 cat games_test.csv | while IFS=, read -r YEAR ROUND WINNER OPPONENT WINNER_GOALS OPPONENT_GOALS
